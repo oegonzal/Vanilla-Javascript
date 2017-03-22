@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Welcome to Virtue/Vice!</title>
+		<link rel="stylesheet" href="../css/welcome.css">
+        
+        <script src="../js/log.js"></script>
+        <link rel="stylesheet" href="../css/log.css">
+	</head>
+	<body>
+        <div class="log-box" id="log">     
+            <div class="log-message">
+                <button type="button" class="log-button" onclick="logout_no()">NO</button>
+                <button type="button" class="log-button" onclick="logout_yes()">YES</button>
+                <p>Are you sure you want to log out?</p>
+            </div>
+        </div>
+        <button type="button" id="logout" onclick="logout_called()">LOGOUT</button>
+	  <div class="welcome">
+	  	<h1>virtue / <i>vice</i></h1>
+          
+        <h2><span>keep your habits in line</span></h2>    
+     
+	    <p id="add"><input class="addbutton" type="button" value="add a habit" onclick="location.href='add.html'">
+		</p>
+	  </div>
+	</body>
+</html>

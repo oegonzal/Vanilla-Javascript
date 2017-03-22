@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<title>Edit a habit</title>
+		<link rel="stylesheet" href="../css/forms.css">
+        <link rel="stylesheet" href="../css/log.css">
+        <link rel="stylesheet" href="../css/box.css">
+        <link rel="stylesheet" href="../css/font-awesome-4.4.0/css/font-awesome.min.css">
+        <script src="../js/log.js"></script>
+        <script src="../js/jquery.js"></script>
+        <script src="../js/firebase.js"></script>
+	</head>
+	<body>
+        <div class="log-box" id="log">
+            <div class="log-message">
+                <button type="button" class="log-button" onclick="logout_no()">NO</button>
+                <button type="button" class="log-button" onclick="logout_yes()">YES</button>
+                <p>Are you sure you want to log out?</p>
+            </div>
+        </div>
+        
+		<div class="forms">
+			<h2>Edit A Habit</h2>
+			<form id="edit-form">
+			</form>
+
+		</div>
+        
+		<div id="overlay" class="overlay">
+		  <div id="editOverlay" class="editOverlay">
+        <h3>Are you sure?</h3>
+        <div class="buttons">
+          <input id = "editConfirmed" class="yesEditButton" type="button" value="Yes">
+          <input class="noEditButton" type="button" value="No" onclick="editOverlay()">
+        </div>
+      </div>
+    </div>
+		<script src="../js/edit.js"></script>
+		<!--<script src="../js/edit.js"></script>-->
+        <div id="button-box">
+            <button type="button" id="logout" onclick="logout_called()">LOGOUT</button>
+        </div>
+        <hr style="height:100px;border-width:0">
+	</body>
+</html>

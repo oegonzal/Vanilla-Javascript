@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Notifications</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../css/notification.css">
+    <script src="../js/jquery.js"></script>
+    <script src="../js/firebase.js"></script>
+    <script src="../js/log.js"></script>
+		<script src="../js/not.js"></script>
+		<script src="../js/add.js"></script>
+    <link rel="stylesheet" href="../css/log.css">
+    <link rel="stylesheet" href="../css/box.css">
+</head>
+
+<body>
+	<div class="log-box" id="log">
+		<div class="log-message">
+			<button type="button" class="log-button" onclick="logout_no()">NO</button>
+			<button type="button" class="log-button" onclick="logout_yes()">YES</button>
+			<p>Are you sure you want to log out?</p>
+		</div>
+		</div>
+	<section>
+		<h1>Notifications Page</h1>
+		<ul id="notification-list">
+		</ul>
+	</section>
+   
+  <div id="button-box">
+		<button type="button" id="logout" onclick="logout_called()">LOGOUT</button>
+	</div>
+	<hr style="height:100px;border-width:0">
+</body>
+</html>

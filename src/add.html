@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Add a habit</title>
+  <link rel="stylesheet" href="../css/forms.css">
+  <link rel="javascript" href="../css/forms.css">
+  <link rel="stylesheet" href="../css/log.css">
+  <link rel="stylesheet" href="../css/box.css">
+  <link rel="stylesheet" href="../css/font-awesome-4.4.0/css/font-awesome.min.css">
+  <script src="../js/log.js"></script>
+  <script src="../js/jquery.js"></script>
+  <script src="../js/firebase.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/spin.js/1.2.7/spin.min.js"></script>
+  <script src="../js/sha256.js"></script>
+  <script src="../js/uploadImg.js"></script> 
+	
+</head>
+<body onload="notifyMe()">
+<div class="log-box" id="log">     
+  <div class="log-message">
+      <button type="button" class="log-button" onclick="logout_no()">NO</button>
+      <button type="button" class="log-button" onclick="logout_yes()">YES</button>
+      <p>Are you sure you want to log out?</p>
+  </div>
+</div>
+<div class="forms">
+  <h2>Add A Habit</h2>
+  <form>
+    <p><label><span id="title_text"><i style="display:none" id="title_ex" class="fa fa-exclamation"></i>Habit Title</span></label></p>
+    <p><input id="title" type="text" name="fullname" placeholder="Exercise 30 minutes" maxlength="27"></p>
+    <p><label>Habit Icon</label></p>
+    <img id="icon1" class="icon" onclick="selectImage('icon1');" src="../img/sleep.jpg" alt="sleep image"/>
+    <img id="icon2" class="icon" onclick="selectImage('icon2');" src="../img/salad.jpg" alt="eat image"/>
+    <img id="icon3" class="icon" onclick="selectImage('icon3');" src="../img/run.jpg" alt="run image"/>
+    <img id="icon4" class="icon" onclick="uploadImage();" src="../img/add.png" alt="find a image"/>
+    <p id="weekly_freq"><label><i style="display:none" id="weekly_ex" class="fa fa-exclamation"></i>Weekly Frequency</label></p>
+    <div id="ck-button">
+        <label> <input id="tester" type="checkbox" name="dayOfTheWeek" value="sunday"><span>Sun</span></label>
+        <label> <input type="checkbox" name="dayOfTheWeek" value="monday"><span>Mon</span></label>
+        <label> <input type="checkbox" name="dayOfTheWeek" value="tuesday"><span>Tues</span></label>
+        <label> <input type="checkbox" name="dayOfTheWeek" value="wednesday"><span>Wed</span></label>
+        <label> <input type="checkbox" name="dayOfTheWeek" value="thursday"><span>Thur</span></label>
+        <label> <input type="checkbox" name="dayOfTheWeek" value="friday"><span>Fri</span></label>
+        <label> <input type="checkbox" name="dayOfTheWeek" value="saturday"><span>Sat</span></label>
+    </div>
+    <input type="hidden" id="iconChosenFlag" name="imageId" value="default">
+
+		<p>
+			<label> <span> Daily Frequency:</span>
+				<input id="others" name="frequencyPerDay" type="number" maxlength="2" placeholder="1">
+			</label>
+		</p>
+
+    <input style="visibility: hidden;display: none;" class="hidden" type="file" accept="image/*" capture="camera" id="file-upload">
+    <img class="pano" id="pano" />
+
+    <div>
+      <p>
+      <label>
+        <div id="hour_min_ex" style="display:none" >
+          <i class="fa fa-exclamation"></i>
+        </div>
+        <span id="noti_text">Notification Interval: </span>
+        <input id="notificationHours" type="number" maxlength="2" placeholder="2" onchange="isNumberInHour(this)">
+        <span id="hour_val" class="noti_hr_min">hours</span>
+        <input id="notificationMins" type="number" maxlength="2" placeholder="15" onchange="isNumberInMin(this)">
+        <span id="min_val" class="noti_hr_min">minutes</span>
+      </label>
+      </p>
+    </div>
+
+    
+    <br/>
+    <p id="save_p"><input id="save" type="button" value="Save It"></p>
+
+  </form>
+
+</div>
+  <script src="../js/add.js"></script> 
+  <div id="button-box">
+      <button type="button" id="logout" onclick="logout_called()">LOGOUT</button>
+  </div> 
+  <hr style="height:100px;border-width:0">
+</body>
+</html>

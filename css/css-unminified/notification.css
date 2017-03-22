@@ -1,0 +1,41 @@
+/* notification */ 
+html{  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;}
+h1{color:#888;text-align: center;}
+body{
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+    background: -webkit-linear-gradient(left top, #BBDEFB, #B0C4DE) fixed; /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right,#BBDEFB, #B0C4DE) fixed; /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right, #BBDEFB, #B0C4DE) fixed; /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom right,  #BBDEFB, #B0C4DE) fixed; /* Standard syntax */
+    font-family: Helvetica, san-sarif;
+	overflow: hidden;
+}
+
+hr{display:block; border-style: block; margin:0px; border-width: 1px; border-color:#EOFFFF;}
+#notification-list{list-style: none; padding:0;}
+#notification-list>li{position:relative; height: 50px;padding:5%; background:rgba(255,255,255,1); border:1px solid rgba(255, 255, 255, 0.3); border-radius:5px; margin:10px; padding:0;}
+
+/* habit info */
+.notification-info{padding:0;margin-left:20px;}
+.notification-info>li{list-style:none; height:100%; padding:0; margin-right:5px; vertical-align: center; text-align: center}
+.notification-name{margin:0; padding:0; height:100%; display:inline-block; vertical-align: middle; line-height:50px;color:#888;}
+
+/* phone */
+@media only screen
+    and (max-width: 500px) {
+    section{width:350px;margin: 0 auto;}
+        .notification-name{font-size: 16px}    
+}
+
+/* desktop, tablet */
+@media only screen
+    and (min-width: 500px) {
+    section{width:500px;margin: 0 auto;}
+        .notification-name{font-size: 24px}
+}

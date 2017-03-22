@@ -1,0 +1,351 @@
+/*style for the notifications */
+        /* check how this looks on other browsers and then fix up all
+         * these background setting statements
+         *
+        .notification-message {
+            background-color: #339bb9;
+            background-repeat: repeat-x;
+            background-image: -khtml-gradient(linear, left top, left bottom, from(#5bc0de), to(#339bb9));
+            background-image: -moz-linear-gradient(top, #5bc0de, #339bb9);
+            background-image: -ms-linear-gradient(top, #5bc0de, #339bb9);
+            background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #5bc0de), color-stop(100%, #339bb9));
+            background-image: -webkit-linear-gradient(top, #5bc0de, #339bb9);
+            background-image: -o-linear-gradient(top, #5bc0de, #339bb9);
+            background-image: linear-gradient(top, #5bc0de, #339bb9);
+            filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=
+'#5bc0de', endColorstr='#339bb9', GradientType=0);
+            text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+            border-color: #339bb9 #339bb9 #22697d;
+            border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+            font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+            font-size: 13px;
+            position: relative;
+            padding: 7px 15px;
+            margin-bottom: 18px;
+            color: #404040;
+            -webkit-border-radius: 4px;
+            -moz-border-radius: 4px;
+            border-radius: 4px;
+            -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+            -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+            box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25);
+        }
+
+        .notification-message .close:hover {
+            color: #000000;
+            text-decoration: none;
+            filter: alpha(opacity=40);
+            -khtml-opacity: 0.4;
+            -moz-opacity: 0.4;
+            opacity: 0.4;
+        }
+
+        .notification-message .close {
+            float: right;
+            color: #000000;
+            font-size: 20px;
+            font-weight: bold;
+            line-height: 13.5px;
+            text-shadow: 0 1px 0 #ffffff;
+            filter: alpha(opacity=25);
+            -khtml-opacity: 0.25;
+            -moz-opacity: 0.25;
+            opacity: 0.25;
+            margin-top: 0;
+            font-weight: bold;
+            color: #404040;
+            text-decoration: none;
+        }
+
+        .notification-message .settings:hover {
+            color: #000000;
+            text-decoration: none;
+            filter: alpha(opacity=40);
+            -khtml-opacity: 0.4;
+            -moz-opacity: 0.4;
+            opacity: 0.4;
+        }
+
+        .notification-message .settings {
+            float: right;
+            color: #000000;
+            font-size: 14px;
+            font-weight: bold;
+            line-height: 12px;
+            text-shadow: 0 1px 0 #ffffff;
+            filter: alpha(opacity=25);
+            -khtml-opacity: 0.25;
+            -moz-opacity: 0.25;
+            opacity: 0.25;
+            margin-top: 0;
+            font-weight: bold;
+            color: #404040;
+            text-decoration: none;
+        }
+
+        .notification-message p {
+            text-align: center;
+            color: #ffffff;
+            margin-bottom: 0;
+            margin: 0;
+            padding: 0;
+        }*/
+
+/* basic structure & layout */
+html{	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;}
+h1{margin: 0; color:#888;text-align: center;}
+body{
+	height: 100%;
+	width: 100%;
+	padding: 0;
+	margin: 0;
+    background: -webkit-linear-gradient(left top, #BBDEFB, #B0C4DE) fixed; /* For Safari 5.1 to 6.0 */
+    background: -o-linear-gradient(bottom right,#BBDEFB, #B0C4DE) fixed; /* For Opera 11.1 to 12.0 */
+    background: -moz-linear-gradient(bottom right, #BBDEFB, #B0C4DE) fixed; /* For Firefox 3.6 to 15 */
+    background: linear-gradient(to bottom right,  #BBDEFB, #B0C4DE) fixed; /* Standard syntax */
+    font-family: Helvetica, san-sarif;
+}
+
+#habit-list{list-style: none; padding:0;}
+#habit-list>li{position:relative; height: 240px;padding:5%; background:rgba(255,255,255,1); border:1px solid rgba(255, 255, 255, 0.3); border-radius:5px; margin:5px; padding:0;}
+
+/* habit info */
+.habit-info{padding:0;margin-left:20px;}
+.habit-info>li{list-style:none; height:100%; padding:0; margin-right:5px; vertical-align: center;}
+.habit-name{margin:0; padding:0; height:100%; display:inline-block; vertical-align: middle; line-height:60px;color:#888;font-size: 24px;}
+.habit-icon{margin:0; border-radius:5px;width:100px; height:100px;}
+
+.message{position:absolute; display:inline-block; visibility: hidden; text-align:center; color:#888;}
+.message-total{visibility: visible;}
+.message-total>svg{margin: 15px auto;}
+
+/* operations (for a existing habit) */
+.habit-op{position:absolute; right:5px;display:inline-block; height: 100%; line-height: 60px;width:100%;text-align:center;top:170px;margin:0 auto;}
+.habit-op img{height: 90%;}
+.op{width:60px; height:60px;margin-right:5px;border-radius: 50%; box-shadow: 0 0 3px gray; padding: 5px; vertical-align: middle;}
+.op:hover{box-shadow: 0 0 5px gray;}
+.op:active{box-shadow: 0 0 10px gray;}
+.op:focus{outline-style:none;}
+
+.op-done{background:rgba(0, 177, 106, 0.8); border:2px solid rgba(0, 128, 0, 0.3);}
+.op-done:hover{background:#00B16A;}
+.op-done:active{background:#00B16A; border:2px solid green;}
+
+.op-edit{background:rgba(247, 202, 24, 0.8); border:2px solid rgba(255, 255, 0, 0.3);}
+.op-edit:hover{background:#F7CA18;}
+.op-edit:active{background:#F7CA18; border:2px solid yellow;}
+
+.op-del{background:rgba(242, 38, 19, 0.7); border:2px solid rgba(255,0,0,0.3);}
+.op-del:hover{background:#F22613;}
+.op-del:active{background:#F22613; border:2px solid red;}
+
+/* add notification */
+#notifications_page{position:fixed; bottom: 20px; right:260px;background:rgba(33, 72, 100, 1.0); width: 60px;height:60px; vertical-align: middle; font-size:36px; padding: 5px;line-height: 100%;color:white; border:2px solid rgba(85,85,85,0.7); -webkit-appereance: none; border-radius: 50%; box-shadow: 0 0 3px gray;}
+#notifications_page:hover{background: rgba(33, 72, 100, 0.7); border:1px solid rgba(85,85,85,0.7); box-shadow: 0 0 5px gray;}
+#notifications_page:active{border: 2px solid gray; background: rgba(33, 72, 100); box-shadow: 0 0 10px gray;}
+#notifications_page:focus{outline-style:none;}
+
+/* add habit */
+#addHabit{position:fixed; bottom: 20px; right:180px;background:rgba(33, 72, 100, 1.0); width: 60px;height:60px; vertical-align: middle; font-size:36px; padding: 5px;line-height: 100%;color:white; border:2px solid rgba(85,85,85,0.7); -webkit-appereance: none; border-radius: 50%; box-shadow: 0 0 3px gray;}
+#addHabit:hover{background: rgba(33, 72, 100, 0.7); border:1px solid rgba(85,85,85,0.7); box-shadow: 0 0 5px gray;}
+#addHabit:active{border: 2px solid gray; background: rgba(33, 72, 100); box-shadow: 0 0 10px gray;}
+#addHabit:focus{outline-style:none;}
+
+/* add settings */
+#settings{position:fixed; bottom: 20px; right:100px;background:rgba(33, 72, 100, 1.0); width: 60px;height:60px; vertical-align: middle; font-size:36px; padding: 5px;line-height: 100%;color:white; border:2px solid rgba(85,85,85,0.7); -webkit-appereance: none; border-radius: 50%; box-shadow: 0 0 3px gray;}
+#settings:hover{background: rgba(33, 72, 100, 0.7); border:1px solid rgba(85,85,85,0.7); box-shadow: 0 0 5px gray;}
+#settings:active{border: 2px solid gray; background: rgba(33, 72, 100); box-shadow: 0 0 10px gray;}
+#settings:focus{outline-style:none;}
+
+/* entire container, keeps perspective */
+.flip-container {
+	perspective: 1000;
+}
+	/* flip the pane when hovered */
+	.flip-container:hover .flipper, .flip-container.hover .flipper {
+		transform: rotateY(180deg);
+    }
+
+/* flip speed goes here */
+.flipper {
+	transition: 0.6s;
+	transform-style: preserve-3d;
+	position: relative;
+}
+
+/* hide back of pane during swap */
+.front, .back {
+	backface-visibility: hidden;
+	top: 0;
+	left: 0;
+}
+
+/* front pane, placed above back */
+.front {
+	z-index: 2;
+	/* for firefox 31 */
+	transform: rotateY(0deg);
+}
+
+/* back, initially hidden pane */
+.back {
+	transform: rotateY(180deg);
+}
+
+
+
+/*                Overlay CSS      */
+#overlay {
+     visibility: hidden;
+     position: fixed;
+     left: 0;
+     top: 0;
+     width:100%;
+     height:100%;
+     text-align:center;
+     background: rgba(0,0,0,0.8);
+     z-index: 999;
+     opacity: 1;
+     -webkit-transition: opacity 400ms ease-in;
+	   -moz-transition: opacity 400ms ease-in;
+	   transition: opacity 400ms ease-in;
+}
+
+.deleteOverlay {
+    visibility: hidden;
+     width:500px;
+     position: relative;
+     margin: 0 auto;
+     background-color: #fff;
+     border:1px solid #000;
+     padding:15px;
+     text-align:center;
+     z-index: 1000;
+}
+
+.deleteOverlay .h2{
+  font-size: 3.5em;
+  text-align: center;
+  color: #808080;
+}
+
+.deleteOverlay .buttons {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	padding-left: 2px;
+	-webkit-transition: bottom 1s, height 0.5s;
+	transition: bottom 1s, height 0.5s;
+  -webkit-appearance:none;
+}
+
+.deleteOverlay .yesDeleteButton {
+  -webkit-appearance:none;
+	width: 49%;
+	display: inline-block;
+	margin: 0;
+	padding: 15px;
+	background:none;
+	background-color: #214864;
+  border:none;
+  color:white;
+  -webkit-border-radius: 5px; /*For Safari, etc. */
+  -moz-border-radius: 5px; /* For Mozilla, etc. */
+  border-radius: 5px; /* CSS3 Feature */
+  opacity: 1.0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.deleteOverlay .yesDeleteButton:hover {
+	opacity: 0.75;
+	cursor: pointer;
+}
+
+
+.deleteOverlay .noDeleteButton {
+  -webkit-appearance:none;
+	width: 49%;
+	display: inline-block;
+	margin: 0;
+	padding: 15px;
+	background: none;
+  border: none;
+  color: white;
+  background-color: #48BA87;
+  -webkit-border-radius: 5px; /*For Safari, etc. */
+  -moz-border-radius: 5px; /* For Mozilla, etc. */
+  border-radius: 5px; /* CSS3 Feature */
+  opacity: 1.0;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.deleteOverlay .yesDeleteButton:hover {
+  opacity: 0.75;
+  cursor: pointer;
+}
+
+.deleteOverlay .noDeleteButton:hover {
+	opacity: 0.75;
+	cursor: pointer;
+}
+
+meter{width: 250px}
+   
+@media (max-width: 450px) {
+	  .overlay{
+	  width: auto;
+  }
+	
+  .deleteOverlay {
+  	width: auto;
+  	margin: 0 20px;
+  }
+}
+   
+@media (max-width: 380px) {
+  .login {
+    top: 7%;
+  }
+
+  .deleteOverlay .yesDeleteButton {
+    width: 48%;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+  .deleteOverlay .noDeleteButton {
+    width: 48%;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+   
+/* phone */
+@media only screen
+    and (max-width: 500px) {
+        section{width:320px;margin: 0 auto;}
+        .message{right:5px;bottom:80px;font-size: small;}
+        .notification-box{width: 350px; margin: 0 auto;}
+        .habit-icon{width: 75px; height: 75px}
+        meter{width: 150px}
+        .op-done{width: 40px; height: 40px}
+        .op-edit{width: 40px; height: 40px}
+        .op-del{width: 40px; height: 40px}
+        .op-missed{width: 40px; height: 40px}
+        .habit-op{top: 135px}
+        #habit-list>li{height: 200px}
+}
+
+/* desktop, tablet */
+@media only screen
+    and (min-width: 500px) {
+    section{width:500px;margin: 0 auto;}
+    .message{right:60px;bottom:80px;}
+    .notification-box{width:500px; margin: 0 auto}
+}

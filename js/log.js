@@ -1,0 +1,1 @@
+function logout_called(){var o=document.getElementById("log");o.style.display="block"}function logout_yes(){var o=document.getElementById("log");o.style.display="none",window.location="../src/login.html"}function logout_no(){var o=document.getElementById("log");o.style.display="none"}
